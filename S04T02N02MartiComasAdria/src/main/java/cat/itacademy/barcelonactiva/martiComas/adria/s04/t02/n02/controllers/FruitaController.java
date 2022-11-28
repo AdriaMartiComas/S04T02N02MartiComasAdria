@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.model.domain.Fruita;
-import cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.service.FruitaService;
+import cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.model.service.FruitaService;
 
 @RestController
 @RequestMapping("/fruita")
@@ -41,9 +41,7 @@ public class FruitaController {
 		if (!oFruita.isPresent()) {
 			return ResponseEntity.notFound().build();
 		} else {
-			oFruita.get().setNom(fruita.getNom());
-			oFruita.get().setQuantitatQuilos(fruita.getQuantitatQuilos());
-
+			fruitaService.fruitaUpdate(oFruita, fruita);
 			return ResponseEntity.status(HttpStatus.CREATED).body(fruitaService.save(oFruita.get()));
 		}
 

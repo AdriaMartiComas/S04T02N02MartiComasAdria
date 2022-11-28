@@ -1,4 +1,4 @@
-package cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.service;
+package cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.model.service;
 
 import java.util.Optional;
 
@@ -19,6 +19,6 @@ public interface FruitaService {
 	
 	public void deleteById(Long id);
 	
-	//afegir metodes que calguin
+	public void fruitaUpdate(Optional<Fruita> oFruita, Fruita fruita);
 	
 }

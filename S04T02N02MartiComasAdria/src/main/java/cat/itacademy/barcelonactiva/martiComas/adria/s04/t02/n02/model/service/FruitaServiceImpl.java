@@ -1,4 +1,4 @@
-package cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.service;
+package cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.model.service;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.model.domain.Fruita;
-import cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.repository.FruitaRepository;
+import cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.model.repository.FruitaRepository;
 
 @Service
 public class FruitaServiceImpl implements FruitaService {
@@ -47,6 +47,14 @@ public class FruitaServiceImpl implements FruitaService {
 	@Transactional
 	public void deleteById(Long id) {
 		fruitaRepository.deleteById(id);
+	}
+
+	@Override
+	@Transactional
+	public void fruitaUpdate(Optional<Fruita> oFruita, Fruita fruita) {
+		oFruita.get().setNom(fruita.getNom());
+		oFruita.get().setQuantitatQuilos(fruita.getQuantitatQuilos());
+		
 	}
 
 }

@@ -1,4 +1,4 @@
-package cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.repository;
+package cat.itacademy.barcelonactiva.martiComas.adria.s04.t02.n02.model.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
